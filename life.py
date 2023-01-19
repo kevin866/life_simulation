@@ -7,8 +7,8 @@ def get_response(action):
         json={
             "prompt": prompt,
             "numResults": 1,
-            "maxTokens": 20,
-            "temperature": 0.8,
+            "maxTokens": 40,
+            "temperature": 0.0,
             "topKReturn": 0,
             "topP":0.98,
             "countPenalty": {
@@ -41,4 +41,33 @@ def get_response(action):
     response = json.loads(response.content.decode('utf-8'))
     return response['completions'][0]['data']['text']
 
-print(get_response("I give money to poor people"))
+def fishing():
+    result = get_response("I go fishing")
+    print(result)
+    return
+
+def sleep():
+    result = get_response("I go to sleep")
+    print(result)
+    return
+
+def plant_potatoes():
+    result = get_response("I plant potatoes")
+    print(result)
+    return
+
+def fight_wolf():
+    result = get_response("I fight wolf")
+    print(result)
+    return
+
+def play_rabbit():
+    result = get_response("I go to play with rabbit")
+    print(result)
+    return
+def main():
+    play_rabbit()
+
+if __name__ == "__main__":
+    main()
+
